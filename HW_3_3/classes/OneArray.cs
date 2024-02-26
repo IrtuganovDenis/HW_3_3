@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,29 +8,18 @@ namespace HW_3_3
 {
     public sealed class OneArray : BaseClass, IOneArray
     {
-        private static int n;
-        private bool b = false;
         public static int[] a;
 
-        public OneArray(int N, bool B)
+        public OneArray(int N, bool B = false):base(B)
         {
-            n = N;
-            b = B;
-            a = new int[n];
-            if (!b)
-            {
-                RandFill();
-            }
-            else
-            {
-                FillByUser();
-            }
+            a = new int[N];
+            Fill();
         }
 
         protected override void FillByUser()
         {
             Console.WriteLine("Введите элементы массива:");
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < a.Length; i++)
             {
                 a[i] = int.Parse(Console.ReadLine());
             }
@@ -39,7 +28,7 @@ namespace HW_3_3
         protected override void RandFill()
         {
             Random rnd = new Random();
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < a.Length; i++)
             {
                 a[i] = rnd.Next(1000);
             }
