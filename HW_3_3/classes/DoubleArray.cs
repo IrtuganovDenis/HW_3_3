@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,25 +8,12 @@ namespace HW_3_3
 {
     public sealed class DoubleArray : BaseClass, IDoubleArray
     {
-        private static int n;
-        private static int m;
-        private bool b = false;
         public static int[,] a;
 
-        public DoubleArray(int N, int M, bool B)
+        public DoubleArray(int N, int M, bool B = false):base(B)
         {
-            n = N;
-            b = B;
-            m = M;
-            a = new int[n, m];
-            if (!b)
-            {
-                RandFill();
-            }
-            else
-            {
-                FillByUser();
-            }
+            a = new int[N, M];
+            Fill();
         }
 
         protected override void FillByUser()
