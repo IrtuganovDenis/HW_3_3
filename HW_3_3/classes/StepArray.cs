@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,23 +8,13 @@ namespace HW_3_3
 {
     public sealed class StepArray : BaseClass, IStepArray
     {
-        private static int n;
-        private bool b = false;
         public static int[][] a;
 
-        public StepArray(int N, bool B)
+        public StepArray(int N, bool B = false) : base(B)
         {
-            n = N;
-            b = B;
-            a = new int[n][];
-            if (!b)
-            {
-                RandFill();
-            }
-            else
-            {
-                FillByUser();
-            }
+            a = new int[N][];
+            Fill();
+            
         }
         protected override void FillByUser()
         {
@@ -46,7 +36,7 @@ namespace HW_3_3
         protected override void RandFill()
         {
             Random rnd = new Random();
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < a.Length; i++)
             {
                 Console.WriteLine("Введите значение длины подмассива");
                 int m = int.Parse(Console.ReadLine());
