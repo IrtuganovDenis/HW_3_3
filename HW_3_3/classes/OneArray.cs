@@ -8,7 +8,7 @@ namespace HW_3_3
 {
     public sealed class OneArray : BaseClass, IOneArray
     {
-        public static int[] a;
+        public int[] a;
 
         public OneArray(int N, bool B = false):base(B)
         {
