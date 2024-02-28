@@ -8,7 +8,7 @@ namespace HW_3_3
 {
     public sealed class StepArray : BaseClass, IStepArray
     {
-        public static int[][] a;
+        public int[][] a;
 
         public StepArray(int N, bool B = false) : base(B)
         {
