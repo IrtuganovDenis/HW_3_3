@@ -8,7 +8,7 @@ namespace HW_3_3
 {
     public sealed class DoubleArray : BaseClass, IDoubleArray
     {
-        public static int[,] a;
+        public int[,] a;
 
         public DoubleArray(int N, int M, bool B = false):base(B)
         {
